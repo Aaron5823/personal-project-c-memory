@@ -70,6 +70,24 @@ Workload Execution:
 Reads commands from the workload file and executes corresponding operations.
 Supports mounting, unmounting, read, and write operations.
 
+Cache Implementation
+cache.h and cache.c
+The cache component provides basic caching functionality for improving data access speed. Key features include:
+
+Cache Initialization:
+
+The cache_create function initializes the cache with a specified number of entries.
+The cache_destroy function deallocates the cache.
+Cache Operations:
+
+cache_lookup: Looks up a block in the cache.
+cache_update: Updates the cache with a new block.
+cache_insert: Inserts a new block into the cache.
+cache_enabled: Checks if the cache is enabled.
+cache_print_hit_rate: Prints the hit rate of the cache.
+cache_resize: Resizes the cache to a new number of entries.
+
+
 JBOD System Tester
 This tester is designed to evaluate the functionality of the JBOD (Just a Bunch Of Disks) system. It reads a workload file and performs various operations such as mounting, unmounting, read, write, and signaling.
 
