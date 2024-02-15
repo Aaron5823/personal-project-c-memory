@@ -43,6 +43,33 @@ Run the JBOD client:
 ./jbod_client <server_ip> <server_port>
 Note: Replace <server_ip> and <server_port> with the IP address and port number of the JBOD server.
 
+Network Interface
+net.h and net.c
+The network interface provides basic functionality for connecting to and disconnecting from a server. Key features include:
+
+Connection:
+
+jbod_connect establishes a connection to the server.
+jbod_disconnect disconnects from the server.
+Packet Sending/Receiving:
+
+nread and nwrite handle reading and writing data to a socket.
+recv_packet and send_packet handle packet-level communication.
+Key Observations:
+Socket-based communication is used for connecting to and disconnecting from the server.
+Packets are sent and received for higher-level communication.
+Tester Component
+tester.c
+The tester component is a standalone program for testing the JBOD system with a specified workload. Key features include:
+
+Command Line Arguments:
+
+Accepts command line arguments for specifying cache size and workload file.
+Workload Execution:
+
+Reads commands from the workload file and executes corresponding operations.
+Supports mounting, unmounting, read, and write operations.
+
 JBOD System Tester
 This tester is designed to evaluate the functionality of the JBOD (Just a Bunch Of Disks) system. It reads a workload file and performs various operations such as mounting, unmounting, read, write, and signaling.
 
