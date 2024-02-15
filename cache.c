@@ -7,7 +7,7 @@
 #include "cache.h"
 #include "jbod.h"
 
-//Uncomment the below code before implementing cache functions.
+
 static cache_entry_t *cache = NULL;
 static int cache_size = 0;
 static int clock = 0;
