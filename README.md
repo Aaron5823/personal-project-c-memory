@@ -43,6 +43,32 @@ Run the JBOD client:
 ./jbod_client <server_ip> <server_port>
 Note: Replace <server_ip> and <server_port> with the IP address and port number of the JBOD server.
 
+JBOD System Tester
+This tester is designed to evaluate the functionality of the JBOD (Just a Bunch Of Disks) system. It reads a workload file and performs various operations such as mounting, unmounting, read, write, and signaling.
+
+Usage
+./tester [-h] [-w workload-file] [-s cache_size]
+Options
+-h: Help mode (displays this message).
+-w workload-file: Path to the workload file specifying the operations to be performed.
+-s cache_size: Size of the cache (optional).
+Workload Commands
+The workload file should contain commands specifying the desired operations. Each line in the file corresponds to a single command. The supported commands are:
+
+MOUNT: Mounts the JBOD system.
+UNMOUNT: Unmounts the JBOD system.
+WRITE_PERMIT: Grants write permission for data modification.
+WRITE_PERMIT_REVOKE: Revokes write permission.
+SIGNALL: Reads and prints all blocks from all disks.
+For read and write operations, the following commands are used:
+
+READ <start_addr> <read_len>: Reads data from the JBOD system starting from the specified address (start_addr) with the given length (read_len).
+WRITE <start_addr> <write_len> <char>: Writes data to the JBOD system starting from the specified address (start_addr) with the given length (write_len) and character (char).
+Example
+./tester -w workload.txt -s 256
+This command will run the tester using the workload specified in the workload.txt file and a cache size of 256.
+
+
 
 
 
